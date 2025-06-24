@@ -13,7 +13,13 @@ function generatePassword(length, includeLowercase, includeUppercase, includeNum
     allowedChars += includeNumbers ? numberChars : "";
     allowedChars += includeSymbols ? symbolChars : "";
     
-    console.log(allowedChars);
+    if (length <= 0) {
+        return `(password length must be at least 1)`;
+    }
+
+    if (allowedChars === 0) {
+        return `(At least one set of characters need to be selected)`;
+    }
     
     return '';
 
