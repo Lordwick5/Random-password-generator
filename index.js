@@ -21,7 +21,11 @@ function generatePassword(length, includeLowercase, includeUppercase, includeNum
         return `(At least one set of characters need to be selected)`;
     }
     
-    return '';
+    for ( i = 0; i < length; i++){
+        const randomIndex = Math.floor(Math.random() * allowedChars.length);
+        password += allowedChars[randomIndex];
+    }
+    return password;
 
 }
 
